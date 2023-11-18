@@ -6,12 +6,6 @@ pipeline {
         NPM_HOME = '/usr/local/bin/npm'
     }
     stages {
-        stage('Fetch repository') {
-            agent any
-            steps {
-                git 'https://github.com/prasad1825/awesome-compose.git'
-            }
-        }
         stage('Run Tests') {
             agent {
                 docker { image 'node:16-alpine' }
