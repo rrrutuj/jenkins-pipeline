@@ -1,10 +1,5 @@
 pipeline {
     agent none
-    environment {
-        // Customize these variables based on your project structure
-        NODEJS_HOME = '/usr/local/bin/node'
-        NPM_HOME = '/usr/local/bin/npm'
-    }
     stages {
         stage('Run Tests') {
             agent {
@@ -12,6 +7,7 @@ pipeline {
             }
             steps {
                 script {
+                        sh 'ls'
                         // Run your React tests (replace 'test' with your actual test script/command)
                         dir('${WORKSPACE}/react-java-mysql/frontend') {
                             sh 'npm test'
